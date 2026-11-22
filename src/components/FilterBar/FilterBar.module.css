@@ -4,20 +4,54 @@
 
 /* the whole bar */
 .filterBar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 24px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px #00000015;
 }
 
 /* the <label> with the checkbox */
 .toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
 }
 
 /* the wrapper of the List / Grid buttons */
 .layoutSwitch {
+  display: flex;
+  gap: 0;
+}
+
+button{
+   padding: 8px;
+   border: 1px solid rgb(197, 195, 195);
+}
+
+.layoutSwitch button:first-child {
+  border-radius: 8px 0 0 8px;
+}
+
+.layoutSwitch button:last-child {
+  border-radius: 0 8px 8px 0;
+  margin-left: -1px;
 }
 
 /* REQUIRED BY THE TESTS: the button of the current layout */
 .active {
+  background: #111c32;
+  color: white;
 }
 
 /* bonus: the search input */
 .search {
+  flex: 1;
+  padding: 16px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 16px;
 }
