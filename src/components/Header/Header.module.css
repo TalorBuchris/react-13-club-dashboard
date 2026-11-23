@@ -8,4 +8,5 @@
 
 /* the <h1> - big, centered, bold */
 .title {
+   text-align: center;
 }

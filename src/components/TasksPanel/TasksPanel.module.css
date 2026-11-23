@@ -4,6 +4,10 @@
 
 /* the whole panel */
 .tasksPanel {
+   border: 1px solid rgb(233, 233, 233);
+   border-radius: 25px;
+   background-color: white;
+   width: 30%;
 }
 
 /* the title with the member name */

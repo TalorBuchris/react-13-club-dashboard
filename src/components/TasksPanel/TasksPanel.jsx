@@ -11,5 +11,7 @@ export default function TasksPanel({ member, tasks, onToggleTask }) {
   // TODO: no member selected -> "Select a member to see their tasks"
   // TODO: the member has no tasks -> "No tasks yet"
   // TODO: otherwise, a loop over tasks: a checkbox (checked = done) + the title, inside a <label>
-  return null
+  return <div className={styles.tasksPanel}>
+
+  </div>
 }

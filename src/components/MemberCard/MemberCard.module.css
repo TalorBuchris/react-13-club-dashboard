@@ -1,43 +1,89 @@
-/* MemberCard styles - add your own styling to these classes (you can add more classes too).
-   Use them in MemberCard.jsx: className={styles.card}
-   Don't delete the classes marked "REQUIRED BY THE TESTS". */
-
-/* the card - border, padding, shadow */
 .card {
+  border: 1px solid rgb(174, 171, 171);
+  border-radius: 20px;
+  margin-bottom: 10px;
 }
 
-/* REQUIRED BY THE TESTS: the card of the selected member */
+.list {
+  height: 12vh;
+  position: relative;
+  background-color: white;
+  padding: 10px;
+  align-items: center;
+  gap: 15px;
+  display: flex;
+}
+
+.grid {
+  height: 220px;
+  background-color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
 .selected {
+  border: 2px solid blue;
 }
 
-/* REQUIRED BY THE TESTS: an inactive member - the card looks faded */
 .inactive {
+  opacity: 0.5;
 }
 
-/* a circle with the initials, same size for all */
 .avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgb(186, 186, 238);
+  color: rgb(50, 50, 106);
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
 }
 
-/* the member name */
+.details{
+  text-align: center;
+}
+
 .name {
+  margin: 0;
 }
 
-/* the role badge */
 .badge {
+  margin-top: 5px;
 }
 
-/* the small action button (disabled -> faded, no hover effect) */
-.roleButton {
+.roleButton{
+  border: none;
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
 }
 
-/* REQUIRED BY THE TESTS: the button of a Leader - blue */
+.list .roleButton {
+  position: absolute;
+  right: 15px;
+}
+
+.grid .roleButton{
+  display: inline;
+}
+
 .leader {
+  background-color: rgb(71, 71, 236);
+  color: white;
 }
 
-/* REQUIRED BY THE TESTS: the button of a Member - green */
 .member {
+  background-color: rgb(59, 174, 59);
+  color: white;
 }
 
-/* REQUIRED BY THE TESTS: the button of a Guest - purple */
 .guest {
+  background-color: rgb(123, 64, 123);
+  color: white;
 }

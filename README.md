@@ -239,3 +239,70 @@ import styles from './MemberCard.module.css'
 - החלפת התצוגה עובדת.
 - הדף נראה נקי במסך קטן ובמסך גדול.
 - הקוד מסודר (Prettier) - אפשר לבדוק עם `npm run format:check`.
+
+
+
+
+
+
+
+
+
+/* MemberCard styles - add your own styling to these classes (you can add more classes too).
+   Use them in MemberCard.jsx: className={styles.card}
+   Don't delete the classes marked "REQUIRED BY THE TESTS". */
+
+/* the card - border, padding, shadow */
+.card {
+  height: 12vh;
+  border: 1px solid rgb(174, 171, 171);
+  border-radius: 20px;
+  display: flex;
+  margin-bottom: 10px;
+}
+
+/* REQUIRED BY THE TESTS: the card of the selected member */
+.selected {
+  border: 2px solid blue;
+}
+
+/* REQUIRED BY THE TESTS: an inactive member - the card looks faded */
+.inactive {
+}
+
+/* a circle with the initials, same size for all */
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgb(186, 186, 238);
+  color: rgb(50, 50, 106);
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* the member name */
+.name {
+}
+
+/* the role badge */
+.badge {
+}
+
+/* the small action button (disabled -> faded, no hover effect) */
+.roleButton {
+}
+
+/* REQUIRED BY THE TESTS: the button of a Leader - blue */
+.leader {
+}
+
+/* REQUIRED BY THE TESTS: the button of a Member - green */
+.member {
+}
+
+/* REQUIRED BY THE TESTS: the button of a Guest - purple */
+.guest {
+}

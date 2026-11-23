@@ -7,10 +7,34 @@ import styles from './MemberCard.module.css'
  * @param {boolean} props.isSelected - true when this is the selected member (the card gets styles.selected)
  * @param {(memberId: number) => void} props.onSelect - call it with member.id when the card is clicked
  */
-export default function MemberCard({ member, isSelected, onSelect }) {
-  // TODO: avatar with the initials ("Noa Levi" -> "NL")
-  // TODO: name + role badge
-  // TODO: button colored by role (Leader=blue, Member=green, Guest=purple), disabled if inactive
-  // TODO: inactive member -> the card also gets styles.inactive (faded)
-  return null
+export default function MemberCard({ member, isSelected, onSelect, layout }) {
+  
+  const initials = member.name
+    .split(' ')
+    .map((word) => word[0])
+    .join('')
+    .toUpperCase()
+
+  return (
+    <div
+      className={`${styles.card} ${styles[layout]}
+        ${!member.isActive ? styles.inactive : ''}
+        ${isSelected ? styles.selected : ''}`}
+      onClick={() => onSelect(member.id)}
+    >
+      <div className={styles.avatar}>{initials}</div>
+
+      <div className={styles.details}>
+        <h3 className={styles.name}>{member.name}</h3>
+        <span className={styles.badge}>{member.role}</span>
+      </div>
+
+      <button
+        className={`${styles.roleButton} ${styles[member.role.toLowerCase()]}`}
+        disabled={!member.isActive}
+      >
+        {member.role}
+      </button>
+    </div>
+  )
 }
