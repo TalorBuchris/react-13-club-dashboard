@@ -21,7 +21,13 @@
 }
 
 .empty {
-   font-weight: bold;
-   font-size: 20px;
-   margin: 10px auto;
+  font-weight: bold;
+  font-size: 20px;
+  margin: 10px auto;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }

@@ -4,16 +4,10 @@ import styles from './App.module.css'
 import FilterBar from './components/FilterBar/FilterBar.jsx'
 import Header from './components/Header/Header.jsx'
 import { useState } from 'react'
-import MemberCard from './components/MemberCard/MemberCard.jsx'
 import MembersList from './components/MembersList/MembersList.jsx'
 import TasksPanel from './components/TasksPanel/TasksPanel.jsx'
-
-// TODO: state (useState):
-//   members          - start with initialMembers
-//   tasks            - start with initialTasks
-//   selectedMemberId - start with null
-//   showOnlyActive   - start with false
-//   layout           - start with "list"
+import Notice from './components/Notice/Notice.jsx'
+import Footer from './components/Footer/Footer.jsx'
 
 // TODO: compute the members to show, the selected member and their tasks
 
@@ -25,6 +19,13 @@ export default function App() {
   const [showOnlyActive, setShowOnlyActive] = useState(false)
   const [layout, setLayout] = useState('list')
 
+  const selectedMember =
+    members.find((member) => member.id === selectedMemberId) || null
+
+  const selectedTasks = tasks.filter(
+    (task) => task.assignedTo === selectedMemberId,
+  )
+
   const filteredMembers = showOnlyActive
     ? members.filter((member) => member.isActive)
     : members
@@ -33,13 +34,21 @@ export default function App() {
   function handleSelect(memberId) {
     setSelectedMemberId(memberId)
   }
-  
+
   function onToggleActive() {
     setShowOnlyActive(!showOnlyActive)
   }
-  
+
   function onLayoutChange(design) {
     if (design === 'list' || design === 'grid') setLayout(design)
+  }
+
+  const handleToggleTask = (taskId) => {
+    setTasks((prevTasks) =>
+      prevTasks.map((task) =>
+        task.id === taskId ? { ...task, done: !task.done } : task,
+      ),
+    )
   }
 
   return (
@@ -51,6 +60,9 @@ export default function App() {
         layout={layout}
         onLayoutChange={onLayoutChange}
       />
+      {selectedMember && !selectedMember.isActive && (
+        <Notice type="warning">{selectedMember.name} is inactive</Notice>
+      )}
       <div className={styles.content}>
         <MembersList
           members={filteredMembers}
@@ -58,9 +70,13 @@ export default function App() {
           selectedMemberId={selectedMemberId}
           onSelect={handleSelect}
         />
-        <TasksPanel />
+        <TasksPanel
+          member={selectedMember}
+          tasks={selectedTasks}
+          onToggleTask={handleToggleTask}
+        />
       </div>
-      <footer />
+      <Footer />
     </div>
   )
 }

@@ -11,7 +11,35 @@ export default function TasksPanel({ member, tasks, onToggleTask }) {
   // TODO: no member selected -> "Select a member to see their tasks"
   // TODO: the member has no tasks -> "No tasks yet"
   // TODO: otherwise, a loop over tasks: a checkbox (checked = done) + the title, inside a <label>
-  return <div className={styles.tasksPanel}>
 
-  </div>
+  if (!member) return <p>Select a member to see their tasks</p>
+
+  return (
+    <div className={styles.tasksPanel}>
+      <h2>Tasks of {member.name}</h2>
+      {tasks.length === 0 ? (
+        <p>No tasks yet</p>
+      ) : (
+        tasks.map((oneTask) => {
+          return (
+            <label
+              key={oneTask.id}
+              htmlFor="{'a' + oneTask.id}"
+              className={`${styles.task} ${oneTask.done ? styles.done : ''}`}
+            >
+              <input
+                type="checkbox"
+                id={'a' + oneTask.id}
+                checked={oneTask.done}
+                onChange={() => {
+                  onToggleTask(oneTask.id)
+                }}
+              />
+              {oneTask.title}
+            </label>
+          )
+        })
+      )}
+    </div>
+  )
 }

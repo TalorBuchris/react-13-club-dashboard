@@ -4,10 +4,11 @@
 
 /* the whole panel */
 .tasksPanel {
-   border: 1px solid rgb(233, 233, 233);
-   border-radius: 25px;
-   background-color: white;
-   width: 30%;
+  border: 1px solid rgb(233, 233, 233);
+  border-radius: 25px;
+  background-color: white;
+  width: 30%;
+  padding: 15px;
 }
 
 /* the title with the member name */
@@ -20,10 +21,13 @@
 
 /* one task */
 .task {
+  display: block;
 }
 
 /* a done task (e.g. line-through) */
 .done {
+  color: #a8a7a7;
+  text-decoration: line-through;
 }
 
 /* the messages "Select a member..." / "No tasks yet" */
