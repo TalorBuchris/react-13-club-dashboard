@@ -1,4 +1,3 @@
-// Notice - a colored box: yellow for warnings, blue for info.
 import styles from './Notice.module.css'
 
 /**

@@ -1,5 +1,3 @@
-// FilterBar - the toggle "Show only active members" + the "List" / "Grid" switch.
-// It has no state of its own: App owns the state and passes it down as props.
 import styles from './FilterBar.module.css'
 
 /**
@@ -37,7 +35,6 @@ export default function FilterBar({
 
       <label htmlFor="search" className={styles.search}>
         Search member...
-        {/* <input type="text" id="search" /> */}
       </label>
 
       <div className={styles.layoutSwitch}>

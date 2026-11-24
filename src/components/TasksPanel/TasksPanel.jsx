@@ -1,4 +1,3 @@
-// TasksPanel - the tasks of the selected member, with messages for the empty states.
 import styles from './TasksPanel.module.css'
 
 /**
@@ -8,17 +7,14 @@ import styles from './TasksPanel.module.css'
  * @param {(taskId: number) => void} props.onToggleTask - call it with task.id when a task checkbox is clicked
  */
 export default function TasksPanel({ member, tasks, onToggleTask }) {
-  // TODO: no member selected -> "Select a member to see their tasks"
-  // TODO: the member has no tasks -> "No tasks yet"
-  // TODO: otherwise, a loop over tasks: a checkbox (checked = done) + the title, inside a <label>
 
   if (!member) return <p>Select a member to see their tasks</p>
 
   return (
     <div className={styles.tasksPanel}>
-      <h2>Tasks of {member.name}</h2>
+      <h2 className={styles.title}>Tasks of {member.name}</h2>
       {tasks.length === 0 ? (
-        <p>No tasks yet</p>
+        <p className={styles.empty}>No tasks yet</p>
       ) : (
         tasks.map((oneTask) => {
           return (

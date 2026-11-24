@@ -1,4 +1,3 @@
-// MemberCard - avatar (initials), name, role badge and a small role-colored action button.
 import styles from './MemberCard.module.css'
 
 /**

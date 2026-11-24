@@ -1,17 +1,16 @@
-// App - keeps all the state (useState) and builds the page from the components.
-import { initialMembers, initialTasks } from './data.js'
 import styles from './App.module.css'
-import FilterBar from './components/FilterBar/FilterBar.jsx'
-import Header from './components/Header/Header.jsx'
+
 import { useState } from 'react'
+
+import { initialMembers, initialTasks } from './data.js'
+
+import Header from './components/Header/Header.jsx'
+import FilterBar from './components/FilterBar/FilterBar.jsx'
 import MembersList from './components/MembersList/MembersList.jsx'
 import TasksPanel from './components/TasksPanel/TasksPanel.jsx'
 import Notice from './components/Notice/Notice.jsx'
 import Footer from './components/Footer/Footer.jsx'
 
-// TODO: compute the members to show, the selected member and their tasks
-
-// TODO: render: Header, FilterBar, Notice (only when needed), MembersList, TasksPanel, Footer
 export default function App() {
   const [members, setMembers] = useState(initialMembers)
   const [tasks, setTasks] = useState(initialTasks)

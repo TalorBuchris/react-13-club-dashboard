@@ -1,8 +1,3 @@
-/* TasksPanel styles - add your own styling to these classes (you can add more classes too).
-   Use them in TasksPanel.jsx: className={styles.tasksPanel}
-   Don't delete the classes marked "REQUIRED BY THE TESTS". */
-
-/* the whole panel */
 .tasksPanel {
   border: 1px solid rgb(233, 233, 233);
   border-radius: 25px;
@@ -11,33 +6,19 @@
   padding: 15px;
 }
 
-/* the title with the member name */
 .title {
+  text-align: center;
 }
 
-/* the list of tasks */
-.tasks {
-}
-
-/* one task */
 .task {
   display: block;
 }
 
-/* a done task (e.g. line-through) */
 .done {
   color: #a8a7a7;
   text-decoration: line-through;
 }
 
-/* the messages "Select a member..." / "No tasks yet" */
 .empty {
-}
-
-/* bonus: the done/total counter */
-.counter {
-}
-
-/* bonus: the quick add form */
-.quickAdd {
+  text-align: center;
 }
